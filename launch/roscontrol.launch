@@ -1,0 +1,16 @@
+<?xml version="1.0"?>
+<launch>
+
+<rosparam file="$(find robotiq_85_gazebo)/config/control.yaml" command="load"/>
+
+<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+output="screen" ns="robotiq" args="joint_state_controller mimic_controller"/>
+<!--<node name="controller_spawner" pkg="controller_manager" type="spawner" respawn="false"
+output="screen" ns="/manipulator" args="js_pub "/>-->
+<!--
+  <node name="robot_state_publisher" pkg="robot_state_publisher" type="robot_state_publisher"
+  respawn="false" output="screen">
+    <remap from="/joint_states" to="/gazebo/joint_states" />
+  </node> -->
+
+</launch>
